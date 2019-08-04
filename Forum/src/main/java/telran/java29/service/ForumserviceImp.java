@@ -113,8 +113,8 @@ public class ForumserviceImp implements ForumService {
 
 	@Override
 	public Iterable<Post> findPostsByTags(List<String> tags) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return forumRepository.findByTags(tags);
 	}
 
 	@Override
@@ -126,8 +126,8 @@ public class ForumserviceImp implements ForumService {
 
 	@Override
 	public Iterable<Post> findPostsByDates(DatePeriodDto periodDto) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return forumRepository.findBydateCreated(periodDto.getFrom(), periodDto.getTo());
 	}
 
 }
